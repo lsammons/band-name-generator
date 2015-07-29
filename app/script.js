@@ -2,8 +2,6 @@
 
 $(function() {
   $("#name").click(function() {
-    // your syntax of the day: AJAX
-    // go ask the server for the info for me.
     // first argument is the route
     $.get('adjective', function(response) {
       console.log(response);
@@ -22,6 +20,29 @@ $(function() {
     })
   })
 });
+
+// sends a POST request to our server.
+$('#submitWords').on('submit', function(e) {
+  // jQ do not refresh page
+  e.preventDefault();
+  // grab input from form
+  var adjective = $('input[name=adjective]').val();
+  // declare JSON object to be passed to back end
+  var adjectivePost;
+  // check to be sure input exists
+  if (adjective) {
+    adjectivePost = {word: adjective};
+    // route, JSON object, function(response)
+    $.post('adjective', adjectivePost, function(response) {
+      //console.log(response);
+      var adjectiveRes = response.message;
+      $('#adjectiveRes').text(adjectiveRes);
+    });
+
+  }
+});
+
+
 
 
 

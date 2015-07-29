@@ -10,16 +10,29 @@
 
     <p>
         Your band's name:
+        <span id="verb">
+        </span>
         <span id="adjective">
         </span>
         <span id="noun">
         </span>
-        <span id="verb">
-        </span>
+
     </p>
 
+    <h3>Submit words for our awesome band name generator!</h3>
+
+    <form id="submitWords">
+      <label>Give us an adjective:</label>
+      <input type="text" name="adjective"/>
+      <input type="submit" value="Submit Words"/>
+    </form>
+
+    <p id="adjectiveRes"></p>
+
+
     <!-- include jQuery here -->
-    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
     <!--<script src="./lib/jquery-1.11.2.js"></script>-->
     <!-- include your external js file here -->
     <script src="script.js"></script>
